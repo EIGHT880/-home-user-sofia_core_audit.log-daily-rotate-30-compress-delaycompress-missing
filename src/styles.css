@@ -1,0 +1,43 @@
+.App {const StrategicReportExporter = ({ data }) => {
+  const handlePrint = () => {
+    // We target only the report div for a professional look
+    const printContent = document.getElementById('printable-report').innerHTML;
+    const originalContent = document.body.innerHTML;
+
+    document.body.innerHTML = printContent;
+    window.print();
+    document.body.innerHTML = originalContent;
+    window.location.reload(); // Reload to restore app state
+  };
+
+  return (
+    <div style={{ textAlign: 'center', marginTop: '50px' }}>
+      {/* Hidden Report Template (only visible to print logic) */}
+      <div style={{ display: 'none' }}>
+        <ReportTemplate data={data} />
+      </div>
+
+      <button 
+        onClick={handlePrint}
+        className="demo-controls"
+        style={{
+          backgroundColor: '#003366',
+          color: 'white',
+          padding: '20px 40px',
+          fontSize: '20px',
+          borderRadius: '50px',
+          cursor: 'pointer',
+          fontWeight: 'bold',
+          border: 'none',
+          boxShadow: '0 10px 20px rgba(0,0,0,0.2)'
+        }}
+      >
+        GENERATE OFFICIAL ASSESSMENT 📄
+      </button>
+    </div>
+  );
+};
+
+  font-family: sans-serif;
+  text-align: center;
+}
