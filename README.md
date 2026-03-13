@@ -1,4 +1,4 @@
-import socket import cv2 import numpy as np import struct import google.generativeai as genai import os import csv from datetime import datetime
+noREADME.mdimport socket import cv2 import numpy as np import struct import google.generativeai as genai import os import csv from datetime import datetime
 
 1. Initialize Lingo Brain
 os.environ["GEMINI_API_KEY"] = "YOUR_API_KEY" genai.configure(api_key=os.environ["GEMINI_API_KEY"]) model = genai.GenerativeModel('gemini-1.5-flash')
